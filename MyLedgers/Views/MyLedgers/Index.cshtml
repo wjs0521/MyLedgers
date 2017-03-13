@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    Layout = "~/Views/Shared/_MyLedgersLayout.cshtml";
+}
+
+@model IEnumerable<MyLedgers.Models.ViewModels.Ledgers>
+
+@Html.Action("CreateLedger")
+
+@{ var id = 1;}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>#</th>
+                <th>@Html.DisplayNameFor(model => model.Category)</th>
+                <th>@Html.DisplayNameFor(model => model.PriceDate)</th>
+                <th>@Html.DisplayNameFor(model => model.Amount)</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@(id++)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PriceDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Amount)</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
