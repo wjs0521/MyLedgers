@@ -1,4 +1,6 @@
 ﻿
+@model IEnumerable<MyLedgers.Models.ViewModels.Ledgers>
+
 @{
     ViewBag.Title = "Index";
 }
@@ -6,8 +8,6 @@
 @{
     Layout = "~/Views/Shared/_MyLedgersLayout.cshtml";
 }
-
-@model IEnumerable<MyLedgers.Models.ViewModels.Ledgers>
 
 @Html.Action("CreateLedger")
 

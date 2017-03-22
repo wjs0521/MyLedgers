@@ -22,7 +22,8 @@ namespace MyLedgers.Models.Services
                 {
                     data.Category = "支出";
                 }
-                if (item.Categoryyy == 1)
+                //if (item.Categoryyy == 1)
+                else
                 {
                     data.Category = "收入";
                 }
