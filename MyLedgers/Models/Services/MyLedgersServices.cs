@@ -5,6 +5,7 @@ using System.Web;
 
 using MyLedgers.Models;
 using MyLedgers.Models.ViewModels;
+using System.Web.Mvc;
 
 namespace MyLedgers.Models.Services
 {
@@ -34,6 +35,34 @@ namespace MyLedgers.Models.Services
             }
 
             return datalist;
+        }
+
+        public List<SelectListItem> CategoryLov()
+        {
+            List<SelectListItem> CategoryList = new List<SelectListItem>();
+
+            CategoryList.Add(new SelectListItem()
+            {
+                Text = "請選擇",
+                Value = "請選擇",
+                Selected = true
+            });
+
+            CategoryList.Add(new SelectListItem()
+            {
+                Text = "支出",
+                Value = "支出",
+                Selected = false
+            });
+
+            CategoryList.Add(new SelectListItem()
+            {
+                Text = "收入",
+                Value = "收入",
+                Selected = false
+            });
+
+            return CategoryList;
         }
     }
 }
